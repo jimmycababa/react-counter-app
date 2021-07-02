@@ -9,7 +9,7 @@ function App() {
   
 
   const [count, setCount] = useState(0)
-
+  const [backOne, setBackCount] = useState(0)
   const updateCount = () => {
     setCount(count + 1)
 
@@ -17,6 +17,10 @@ function App() {
   }
 
   
+
+  const backCount = () => {
+    setBackCount(backOne - 1)
+  }
 
   const refreshPage = () => {
     window.location.reload()
@@ -29,8 +33,10 @@ function App() {
         <p>
           <button onClick={updateCount}>Click For One More</button>
           <button onClick={refreshPage}>Click To Reload</button>
+          <button onClick={backCount}>Click For One Less</button>
         </p>
         <h4>You've Clicked {count} times!</h4>
+        <h4>You've Subtracted {backOne} times!</h4>
           
         
       </header>
