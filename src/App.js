@@ -22,8 +22,9 @@ function App() {
     setBackCount(backOne - 1)
   }
 
-  const refreshPage = () => {
-    window.location.reload()
+  const resetPage = () => {
+    setCount(0);
+    setBackCount(0)
   }
 
   return (
@@ -32,7 +33,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           <button onClick={updateCount}>Click For One More</button>
-          <button onClick={refreshPage}>Click To Reload</button>
+          <button onClick={resetPage}>Click To Restart</button>
           <button onClick={backCount}>Click For One Less</button>
         </p>
         <h4>You've Clicked {count} times!</h4>
