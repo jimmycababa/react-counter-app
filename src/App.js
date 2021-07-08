@@ -40,7 +40,8 @@ function App() {
         </p>
         <h4>You've Clicked {count} times!</h4>
         <h4>You've Subtracted {backOne} times!</h4>
-        <h3>I am counting on you! {counter}</h3>
+        <h3 style={{ color: 'green' }}>I am counting on you!</h3> 
+        <h3 style={{color: 'purple'}}>{counter}</h3>
           
         
       </header>
