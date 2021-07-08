@@ -7,14 +7,15 @@ function App() {
   const [count, setCount] = useState(0)
   const [backOne, setBackCount] = useState(0)
   const [counter, setCounter] = useState(0)
+  const [isReverse, setIsReverse] = useState(false)
 
  useEffect(() => {
    const interval = setInterval(() => {
      console.log("this will run every second")
-     setCounter(counter => counter + 1)
+     setCounter(counter => counter + (isReverse ? -1 : 1))
    }, 1000)
    return () => clearInterval(interval)
- }, [])
+ }, [isReverse, setCounter])
 
   const updateCount = () => {
     setCount(count + 1)
@@ -42,6 +43,7 @@ function App() {
         <h4>You've Subtracted {backOne} times!</h4>
         <h3 style={{ color: 'green' }}>I am counting on you!</h3> 
         <h3 style={{color: 'purple'}}>{counter}</h3>
+        <button onClick={() => setIsReverse(!isReverse)}>Click To Reverse Count!</button>
           
         
       </header>
